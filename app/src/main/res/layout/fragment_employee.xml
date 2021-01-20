@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/employee_imageAvatar"
+        android:layout_width="@dimen/grid_20x"
+        android:layout_height="@dimen/grid_20x"
+        android:layout_marginStart="@dimen/grid_4x"
+        android:layout_marginTop="@dimen/grid_4x"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/CircleImageView"
+        tools:src="@tools:sample/avatars" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/grid_30x"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/employee_imageAvatar"
+        app:layout_constraintTop_toTopOf="@+id/employee_imageAvatar">
+
+        <TextView
+            android:id="@+id/employee_textViewName"
+            style="@style/Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/grid_4x"
+            android:textStyle="bold"
+            tools:text="@tools:sample/full_names" />
+
+        <TextView
+            android:id="@+id/employee_textViewSpecialty"
+            style="@style/Subtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/grid_1x"
+            android:layout_marginEnd="@dimen/grid_4x"
+            tools:text="Менеджер" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/header_separator"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/pale_grey"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/employee_imageAvatar" />
+
+    <TextView
+        android:id="@+id/titleBirthday"
+        style="@style/Body"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/grid_4x"
+        android:layout_marginTop="@dimen/grid_4x"
+        android:text="@string/birthday"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header_separator" />
+
+    <TextView
+        android:id="@+id/titleAge"
+        style="@style/Body"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/grid_4x"
+        android:layout_marginTop="@dimen/grid_2x"
+        android:text="@string/age"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleBirthday" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/rowBarrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="right"
+        app:constraint_referenced_ids="titleBirthday, titleAge" />
+
+    <TextView
+        android:id="@+id/employee_textViewBirthday"
+        style="@style/Body"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/grid_4x"
+        android:layout_marginTop="@dimen/grid_4x"
+        app:layout_constraintStart_toEndOf="@+id/rowBarrier"
+        app:layout_constraintTop_toBottomOf="@+id/header_separator"
+        tools:text="12.12.2000" />
+
+    <TextView
+        android:id="@+id/employee_textViewAge"
+        style="@style/Body"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/grid_4x"
+        android:layout_marginTop="@dimen/grid_2x"
+        app:layout_constraintStart_toEndOf="@+id/rowBarrier"
+        app:layout_constraintTop_toBottomOf="@+id/employee_textViewBirthday"
+        tools:text="20" />
+</androidx.constraintlayout.widget.ConstraintLayout>

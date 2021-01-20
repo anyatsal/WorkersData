@@ -1,0 +1,14 @@
+<resources>
+    <dimen name="grid_1x">4dp</dimen>
+    <dimen name="grid_2x">8dp</dimen>
+    <dimen name="grid_4x">16dp</dimen>
+    <dimen name="grid_14x">56dp</dimen>
+    <dimen name="grid_18x">72dp</dimen>
+    <dimen name="grid_20x">80dp</dimen>
+    <dimen name="grid_22x">88dp</dimen>
+    <dimen name="grid_30x">120dp</dimen>
+
+    <dimen name="font_12">12sp</dimen>
+    <dimen name="font_15">15sp</dimen>
+    <dimen name="font_17">17sp</dimen>
+</resources>

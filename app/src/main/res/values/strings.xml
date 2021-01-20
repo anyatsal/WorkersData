@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">WorkersData</string>
+    <string name="birthday">Дата рождения:</string>
+    <string name="age">Возраст:</string>
+    <string name="error_refresh_database">Update Error</string>
+</resources>

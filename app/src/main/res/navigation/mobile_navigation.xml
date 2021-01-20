@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/main">
+
+    <fragment
+        android:id="@+id/main"
+        android:name="app.workersdata.presentation.main.MainFragment"
+        android:label="MainFragment"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/openSpecialty"
+            app:destination="@id/specialty"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/specialty"
+        android:name="app.workersdata.presentation.specialty.SpecialtyFragment"
+        android:label="SpecialtyFragment"
+        tools:layout="@layout/fragment_specialty">
+        <action
+            android:id="@+id/openEmployee"
+            app:destination="@id/employee"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <argument
+            android:name="speciality"
+            app:argType="app.workersdata.data.model.Specialty" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/employee"
+        android:name="app.workersdata.presentation.employee.EmployeeFragment"
+        android:label="SpecialtyFragment"
+        tools:layout="@layout/fragment_employee">
+
+        <argument
+            android:name="employee"
+            app:argType="app.workersdata.data.model.Employee" />
+    </fragment>
+</navigation>
